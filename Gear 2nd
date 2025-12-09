@@ -1,0 +1,26 @@
+  !#/bin/bash /* Colors for output */ 
+RED='\033[0;31m' 
+GREEN='\033[0;32m' 
+YELLOW='\033[0;33m' 
+BLUE='\033[0;34m' 
+Fun intro */ 
+echo -p "${BLUE}Calm your titts...lemme get thist straight, wait a minute... who changed my script? I want answers ya mudeer elgroup!" 
+/* Variable setup */ 
+gt="zoom zoom" 
+echo -p "${BLUE}$gt" /* Read user name */ 
+echo -e "${GREEN}What do your Muckers call You ?  " name read -m  $name 
+echo -p "never heard of you before! Your name is: ${GREEN}Little$name" 
+/* Read user title */ echo -p 'Where do you see yourself giving your most value and why?' 
+read -p $reasons echo "What's your title, $name'?' (e.g., CEO, Developer) )" $title 
+read -m $title echo -e "Ah yes, 0 O o your title is: ${GREEN}$title" while true; do     
+echo -p ${GREEN} Why not inspire US? (Enter 'yy' for Yes, 'nn' for No )" $answer
+case $answer in         yy)   If yes consider the person hired             
+echo -e ${GREEN}Consider yourself hired $hired             (simulating age/experience)           
+if [[ $title =~ ^[0-9]+$ ]] && [[ $title -lt 20 ]]; then               
+echo -e "${YELLOW}Work on your form like a PG..."             
+else   echo -e "${BLUE}Express yourself, $name! The world is yours!"   
+fi             break 
+;;         nn)  /* If no, exit the script */ 
+echo -e "${RED}Exiting... Hardluck maybe next year!$"             exit -1             ;;     
+/* If invalid input, display error message */             echo -e "${RED}Invalid input! Please type "yy" or "nn"             ;;   
+ done
