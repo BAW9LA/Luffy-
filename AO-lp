@@ -1,0 +1,43 @@
+Ace-Out
+< html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ace-Out</title>
+
+<style>
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        -45deg,
+        #ff512f,
+        #f09819,
+        #ff6a88,
+        #845ec2
+    );
+    background-size: 400% 400%;
+    animation: sunset 12s ease infinite;
+}
+
+@keyframes sunset {
+    0%   { background-position:   0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position:   0% 50%; }
+}
+</style>
+</head>
+
+<body>
+    <h1>SESolutions Never Aced-Out 🚀</h1>
+</body>
+</html>
