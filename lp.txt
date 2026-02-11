@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ace-Out</title>
+
+    <!-- Mobile Dimension Control -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                -45deg,
+                #ff512f,
+                #f09819,
+                #ff6a88,
+                #845ec2
+            );
+            background-size: % 400%;
+            animation: sunset 12s ease infinite;
+        }
+
+        @keyframes sunset {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        section.workspace {
+            width: 90%;
+            max-width: 420px;
+            margin: 1rem 0;
+            padding: ;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .rocket {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            padding: ;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            text-align: center;
+            width:;
+            max-width: ;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Workspace 1 -->
+    <section class="workspace" data-dimension="mobile-core">
+        <div class="rocket">🚀</div>
+        <h1>SE Solutions Never Aced-Out</h1>
+    </section>
+
+    <!-- Workspace 2 -->
+    <section class="workspace" data-dimension="mobile-banner">
+        <marquee direction="right">
+            24 hour pharmacy relief products
+        </marquee>
+        <h2>Farmase' — your health in the right hands</h2>
+    </section>
+
+    <!-- Workspace 3 -->
+    <section class="workspace" data-dimension="mobile-values">
+        <ul>
+            <li>Proper</li>
+            <li>Preparation</li>
+            <li>Prevents</li>
+            <li>Poor</li>
+            <li>Performance</li>
+        </ul>
+
+        <table>
+            <tr>
+                <td>S</td>
+                <td>O</td>
+                <td>A</td>
+                <td>R</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Workspace 4 -->
+    <section class="workspace" data-dimension="mobile-action">
+        <p>
+            We guarantee delivery within
+            80 minutes of your placed order.
+        </p>
+
+        <form>
+            <label for="username">Do the thing</label><br><br>
+            <input type="text" id="username" name="username">
+        </form>
+    </section>
+
+</body>
+</html>
