@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ace-Out</title>
+
+<style>
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ff512f, #f09819, #ff6a88, #845ec2);
+    background-size: 400% 400%;
+    animation: sunset 15s ease infinite;
+}
+
+@keyframes sunset {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hub {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.branch {
+    position: absolute;
+    padding: 10px 18px;
+    background: white;
+    color: #845ec2;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.branch:hover {
+    animation: bounce 0.6s infinite;
+}
+
+/* Positions */
+.branch1 { top: -70px; left: 50%; transform: translateX(-50%); }
+.branch2 { bottom: -70px; left: 50%; transform: translateX(-50%); }
+.branch3 { left: -140px; top: 50%; transform: translateY(-50%); }
+.branch4 { right: -140px; top: 50%; transform: translateY(-50%); }
+.branch5 { top: 20%; right: -140px; }
+.branch6 { bottom: 20%; left: -140px; }
+
+</style>
+</head>
+
+<body>
+
+<div class="hub">
+    Ace-Out 🚀
+
+    <a class="branch branch1" data-value="Services">Services</a>
+    <a class="branch branch2" data-value="Branches">Branches</a>
+    <a class="branch branch3" data-value="Contact">Contact</a>
+    <a class="branch branch4" data-value="About">About</a>
+    <a class="branch branch5" data-value="Target 🎯"></a>
+    <a class="branch branch6" data-value="Intelligence 🧠">🧠</a>
+
+</div>
+
+<script>
+const branches = document.querySelectorAll('.branch');
+
+branches.forEach(branch => {
+    branch.addEventListener('mouseenter', () => {
+        const text = branch.getAttribute('data-value');
+        const speech = new SpeechSynthesisUtterance(text);
+        speechSynthesis.cancel(); // stop overlap
+        speechSynthesis.speak(speech);
+    });
+});
+</script>
+
+</body>
+</html>
