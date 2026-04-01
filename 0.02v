@@ -89,13 +89,6 @@ body {
 
 <script>
 const branches = document.querySelectorAll('.branch');
-
-branches.forEach(branch => {
-    branch.addEventListener('mouseenter', () => {
-        const text = branch.getAttribute('data-value');
-        const speech = new SpeechSynthesisUtterance(text);
-        speechSynthesis.cancel(); // stop overlap
-        speechSynthesis.speak(speech);
     });
 });
 </script>
