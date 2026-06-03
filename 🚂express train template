@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ace-Out</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+
+    background:linear-gradient(
+        -45deg,
+        #3A575D,
+        #19F073,
+        #6AB7FF,
+        #2B9098,
+        #845EC2
+    );
+    background-size:400% 400%;
+    animation:gradientFlow 15s ease infinite;
+}
+
+@keyframes gradientFlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.hub{
+    position:relative;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.25);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+
+    box-shadow:
+        0 0 30px rgba(0,0,0,0.2),
+        inset 0 0 20px rgba(255,255,255,0.1);
+}
+
+.center-text{
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+.branch{
+    position:absolute;
+
+    min-width:140px;
+    text-align:center;
+
+    padding:10px 16px;
+
+    background:rgba(255,255,255,0.95);
+    color:#2B9098;
+
+    border-radius:30px;
+    text-decoration:none;
+    cursor:pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.branch:hover{
+    transform:scale(1.08);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+/* Radial Positions */
+
+.branch1  { top:-70px; left:50%; transform:translateX(-50%);}
+.branch2  { top:10px; right:-180px;}
+.branch3  { top:90px; right:-200px;}
+.branch4  { bottom:90px; right:-200px;}
+.branch5  { bottom:10px; right:-180px;}
+.branch6  { bottom:-70px; left:50%; transform:translateX(-50%);}
+.branch7  { bottom:10px; left:-180px;}
+.branch8  { bottom:90px; left:-200px;}
+.branch9  { top:90px; left:-200px;}
+.branch10 { top:10px; left:-180px;}
+.branch11 { top:-50px; right:-120px;}
+.branch12 { top:-30px; right:-200px;}
+.branch13 { top:50px; right:-240px;}
+.branch14 { top:150px; right:-220px;}
+.branch15 { bottom:150px; right:-220px;}
+.branch16 { bottom:50px; right:-240px;}
+.branch17 { bottom:-30px; right:-200px;}
+.branch18 { bottom:-50px; right:-120px;}
+.branch19 { bottom:-50px; left:-120px;}
+.branch20 { bottom:-30px; left:-200px;}
+.branch21 { bottom:50px; left:-240px;}
+.branch22 { top:150px; left:-220px;}
+.branch23 { top:50px; left:-240px;}
+
+.info-panel{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    padding:12px 20px;
+    border-radius:20px;
+
+    background:rgba(0,0,0,.65);
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+    min-width:300px;
+    text-align:center;
+}
+
+@media(max-width:900px){
+
+    .hub{
+        transform:scale(.75);
+    }
+
+    .info-panel{
+        width:90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hub">
+
+    <div class="center-text">
+        Ace-Out 🚆
+    </div>
+
+    <a class="branch branch1" data-value="G Line Express">
+        G Line Express
+    </a>
+
+    <a class="branch branch2" data-value="Court Sq">
+        Court Sq
+    </a>
+
+    <a class="branch branch3" data-value="Greenpoint Ave">
+        Greenpoint Ave
+    </a>
+
+    <a class="branch branch4" data-value="Metropolitan Ave">
+        Metropolitan Ave
+    </a>
+
+    <a class="branch branch5" data-value="Flushing Ave">
+        Flushing Ave
+    </a>
+
+    <a class="branch branch6" data-value="Bedford-Nostrand">
+        Bedford-Nostrand
+    </a>
+
+    <a class="branch branch7" data-value="Clinton-Washington">
+        Clinton-Washington
+    </a>
+
+    <a class="branch branch8" data-value="Hoyt-Schermerhorn">
+        Hoyt-Schermerhorn
+    </a>
+
+    <a class="branch branch9" data-value="Carroll St">
+        Carroll St
+    </a>
+
+    <a class="branch branch10" data-value="Prospect Park">
+        Prospect Park
+    </a>
+
+    <a class="branch branch11" data-value="Long Island City">
+        Long Island City
+    </a>
+
+    <a class="branch branch12" data-value="Astoria Blvd">
+        Astoria Blvd
+    </a>
+
+    <a class="branch branch13" data-value="Ditmars Blvd">
+        Ditmars Blvd
+    </a>
+
+    <a class="branch branch14" data-value="Jackson Ave">
+        Jackson Ave
+    </a>
+
+    <a class="branch branch15" data-value="Vernon Blvd">
+        Vernon Blvd
+    </a>
+
+    <a class="branch branch16" data-value="Queensboro Plaza">
+        Queensboro Plaza
+    </a>
+
+    <a class="branch branch17" data-value="21st St">
+        21st St
+    </a>
+
+    <a class="branch branch18" data-value="Hunters Point Ave">
+        Hunters Point Ave
+    </a>
+
+    <a class="branch branch19" data-value="Jay St">
+        Jay St
+    </a>
+
+    <a class="branch branch20" data-value="High St">
+        High St
+    </a>
+
+    <a class="branch branch21" data-value="Nostrand Ave">
+        Nostrand Ave
+    </a>
+
+    <a class="branch branch22" data-value="Marcy Ave">
+        Marcy Ave
+    </a>
+
+    <a class="branch branch23" data-value="Broadway">
+        Broadway
+    </a>
+
+</div>
+
+<div id="infoPanel" class="info-panel">
+    Hover over a station 🚉
+</div>
+
+<script>
+
+const branches = document.querySelectorAll('.branch');
+const panel = document.getElementById('infoPanel');
+
+branches.forEach(branch => {
+
+    branch.addEventListener('mouseenter', () => {
+        panel.textContent = branch.dataset.value;
+    });
+
+    branch.addEventListener('mouseleave', () => {
+        panel.textContent = "Hover over a station 🚉";
+    });
+
+});
+
+</script>
+
+</body>
+</html>
