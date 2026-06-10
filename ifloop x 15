@@ -2,10 +2,10 @@ read -p "Enter username"; v1
 echo "Welcome to the Conglemarate"
 if [[$v1!="babu"]]; then
 echo "Your nu repurpose the statement here to fit your conditions"
-/*this sets the loop to a paramater thats quantifiable this loop will run 4 times or untill the variable is greater than 4 representing x" */
+/*this sets the loop to a paramater thats quantifiable this loop will run 15 times or untill the variable is greater than 4 representing x" */
 
 x=0
-until [ $x -gt 4 ]; do
+until [ $x -gt 15 ]; do
     if [ $x -eq 0 ]; then
         echo "We dont die we multiple "
     else
