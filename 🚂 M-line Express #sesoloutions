@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ace-Out</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+
+    background:linear-gradient(
+        -45deg,
+        #EC9706,
+        #CC5801,
+        #FC6A03,
+        #2B9098,
+        #845EC2
+    );
+    background-size:400% 400%;
+    animation:gradientFlow 15s ease infinite;
+}
+
+@keyframes gradientFlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.hub{
+    position:relative;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.25);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+
+    box-shadow:
+        0 0 30px rgba(0,0,0,0.2),
+        inset 0 0 20px rgba(255,255,255,0.1);
+}
+
+.center-text{
+    font-size:1.8rem;
+    font-weight:bold;
+    z-index:10;
+}
+
+.branch{
+    position:absolute;
+    width:130px;
+    text-align:center;
+    padding:8px 12px;
+    background:rgba(255,255,255,0.95);
+    color:#2B9098;
+    border-radius:25px;
+    text-decoration:none;
+    cursor:pointer;
+    font-size:0.85rem;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.branch:hover{
+    transform:scale(1.08);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+/* Radial Positions - 18 branches at 20° intervals, 240px radius */
+.branch1  { transform: rotate(0deg) translateY(-270px) rotate(0deg); }
+.branch2  { transform: rotate(20deg) translateY(-240px) rotate(-20deg); }
+.branch3  { transform: rotate(40deg) translateY(-240px) rotate(-40deg); }
+.branch4  { transform: rotate(60deg) translateY(-240px) rotate(-60deg); }
+.branch5  { transform: rotate(80deg) translateY(-240px) rotate(-80deg); }
+.branch6  { transform: rotate(100deg) translateY(-240px) rotate(-100deg); }
+.branch7  { transform: rotate(120deg) translateY(-240px) rotate(-120deg); }
+.branch8  { transform: rotate(140deg) translateY(-240px) rotate(-140deg); }
+.branch9  { transform: rotate(160deg) translateY(-240px) rotate(-160deg); }
+.branch10 { transform: rotate(180deg) translateY(-270px) rotate(-180deg); }
+.branch11 { transform: rotate(200deg) translateY(-240px) rotate(-200deg); }
+.branch12 { transform: rotate(220deg) translateY(-240px) rotate(-220deg); }
+.branch13 { transform: rotate(240deg) translateY(-240px) rotate(-240deg); }
+.branch14 { transform: rotate(260deg) translateY(-240px) rotate(-260deg); }
+.branch15 { transform: rotate(280deg) translateY(-240px) rotate(-280deg); }
+.branch16 { transform: rotate(300deg) translateY(-240px) rotate(-300deg); }
+.branch17 { transform: rotate(320deg) translateY(-240px) rotate(-320deg); }
+.branch18 { transform: rotate(340deg) translateY(-240px) rotate(-340deg); }
+
+.info-panel{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    padding:12px 20px;
+    border-radius:20px;
+
+    background:rgba(0,0,0,.65);
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+    min-width:300px;
+    text-align:center;
+}
+
+@media(max-width:900px){
+
+    .hub{
+        transform:scale(.75);
+    }
+
+    .info-panel{
+        width:90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hub">
+
+    <div class="center-text">
+                     _ _ _ _ _ _🚆
+    </div>
+
+    <a class="branch branch1" data-value="Forest Hills-71 Av">
+        Forest Hills-71 Av
+    </a>
+
+    <a class="branch branch2" data-value="63 Dr-Rego Park">
+        63 Dr Rego Park
+    </a>
+
+    <a class="branch branch3" data-value="Grand Av-Newtown">
+        Grand-Av Newtown
+    </a>
+
+    <a class="branch branch4" data-value="Jackson Hts-Roosevelt Av">
+        Jackson Hts-Roosevelt Av
+    </a>
+
+    <a class="branch branch5" data-value="Northern Blvd">
+        Northern Blvd
+    </a>
+
+    <a class="branch branch6" data-value="Steinway St">
+        Steinway St
+    </a>
+
+    <a class="branch branch7" data-value="21 St-Queensbridge">
+        21 St-Queensbridge
+    </a>
+
+    <a class="branch branch8" data-value="Lexington Av/63 St">
+        Lexington Av/63 St
+    </a>
+
+    <a class="branch branch9" data-value="47-50 Sts-Rockefeller Ctr">
+        47-50 Sts-Rockefeller Ctr
+    </a>
+
+    <a class="branch branch10" data-value="34 St-Herald Sq">
+        34 St-Herald Sq
+    </a>
+
+    <a class="branch branch11" data-value="14 St">
+        14 St
+    </a>
+
+    <a class="branch branch12" data-value="Broadway-Lafayette St">
+        Broadway-Lafayette St
+    </a>
+
+    <a class="branch branch13" data-value="Marcy Av">
+        Marcy Av
+    </a>
+
+    <a class="branch branch14" data-value="Lorimer St">
+        Lorimer St
+    </a>
+
+    <a class="branch branch15" data-value="Myrtle Av">
+        Myrtle Av
+    </a>
+
+    <a class="branch branch16" data-value="Knickerbocker Av">
+        Knickerbocker Av
+    </a>
+
+    <a class="branch branch17" data-value="Seneca Av">
+        Seneca Av
+    </a>
+
+    <a class="branch branch18" data-value="Fresh Pond Rd">
+        Fresh Pond Rd
+    </a>
+
+</div>
+
+<div id="infoPanel" class="info-panel">
+    Hover over a station 🚉
+</div>
+
+<script>
+
+const branches = document.querySelectorAll('.branch');
+const panel = document.getElementById('infoPanel');
+
+branches.forEach(branch => {
+
+    branch.addEventListener('mouseenter', () => {
+        panel.textContent = branch.dataset.value;
+    });
+
+    branch.addEventListener('mouseleave', () => {
+        panel.textContent = "Hover over a station 🚉";
+    });
+
+    branch.addEventListener('click', () => {
+        alert(`Selected: ${branch.dataset.value}`);
+    });
+
+});
+
+</script>
+
+</body>
+</html>
