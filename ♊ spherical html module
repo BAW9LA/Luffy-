@@ -1,0 +1,174 @@
+*/this module is not inclusive of elemnts or objects and serves as a visual representation of what should be built for 📢 Speke' and further for language modals/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live 3D Spherical Module</title>
+  <style>
+    /* ==========================================================================
+       CSS STYLING & 3D VIEWPORT CONTEXT
+       ========================================================================== */
+    
+    /* Reset and background setup to match the dark theme */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: #050505;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* 1. Define the 3D space viewport perspective */
+    .scene {
+      width: 500px;
+      height: 500px;
+      perspective: 1200px;
+      position: relative;
+      cursor: grab;
+    }
+    
+    .scene:active {
+      cursor: grabbing;
+    }
+
+    /* 2. Live rotatable 3D sphere container */
+    .sphere {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      will-change: transform; /* Pushes math transformations directly to GPU */
+    }
+
+    /* 3. Structural parameters for the text particle nodes */
+    .node {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px; /* Perfectly centers elements on coordinate points */
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+      
+      /* Essential structural layer rendering properties */
+      transform-style: preserve-3d;
+      backface-visibility: visible; 
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+
+    /* Hover effect for active nodes */
+    .node:hover {
+      color: #00ffcc;
+      text-shadow: 0 0 12px #00ffcc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HTML STRUCTURE
+       ========================================================================== -->
+  <div class="scene">
+    <div class="sphere" id="sphere"></div>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT MATH & LIVE POINTER INTERACTION
+       ========================================================================== -->
+  <script>
+    const sphere = document.getElementById('sphere');
+    const totalNodes = 200; // Total density of scattered matrix characters
+    const radius = 200;     // Boundary width parameter of the sphere in pixels
+
+    // 1. Generate and mathematically map nodes onto a 3D Sphere Surface
+    for (let i = 0; i < totalNodes; i++) {
+      const node = document.createElement('div');
+      node.className = 'node';
+      
+      // Mimic the reference style using random alphanumeric characters or single digits
+      node.textContent = Math.floor(Math.random() * 10);
+      
+      // Fibonacci Sphere algorithm for balanced distribution on a 3D sphere profile
+      const phi = Math.acos(-1 + (2 * i) / totalNodes);
+      const theta = Math.sqrt(totalNodes * Math.PI) * phi;
+
+      // Convert angular Spherical parameters into Cartesian 3D system (X, Y, Z)
+      const x = radius * Math.sin(phi) * Math.cos(theta);
+      const y = radius * Math.sin(phi) * Math.sin(theta);
+      const z = radius * Math.cos(phi);
+
+      // Map mathematical variables to CSS Transform parameters
+      node.style.transform = `translate3d(${x}px, ${y}px, ${z}px)`;
+      
+      // Proportional shading based on depth placement (Z-axis)
+      const depthOpacity = ((z + radius) / (2 * radius)) * 0.7 + 0.3;
+      node.style.opacity = depthOpacity;
+
+      sphere.appendChild(node);
+    }
+
+    // 2. Interactive Pointer Mechanics
+    let currentX = 0;
+    let currentY = 0;
+    let targetX = 0;
+    let targetY = 0;
+    
+    // Automatic idle drift rotation parameters
+    let autoRotationAngle = 0;
+
+    // Monitor cursor positioning changes across the workspace
+    document.querySelector('.scene').addEventListener('mousemove', (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      
+      // Normalize cursor mapping matrix to parameters between -0.5 and 0.5
+      const xNorm = (e.clientX - rect.left) / rect.width - 0.5;
+      const yNorm = (e.clientY - rect.top) / rect.height - 0.5;
+      
+      // Calculate responsive target rotation variables (Max angle range tilt: 60 degrees)
+      targetX = -yNorm * 60; 
+      targetY = xNorm * 60;
+    });
+
+    // Reset sphere profile angle smoothly when cursor moves off the container view
+    document.querySelector('.scene').addEventListener('mouseleave', () => {
+      targetX = 0;
+      targetY = 0;
+    });
+
+    // 3. Smooth Frame Rate Interpolation Loop (Lerp Animation Engine)
+    function renderLiveModule() {
+      // Linear interpolation logic formulas
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      
+      // Keep slow constant rotation drift alive on background idle
+      autoRotationAngle += 0.2; 
+      
+      // Apply final composition variables directly to the structural element container
+      sphere.style.transform = `rotateX(${currentX}deg) rotateY(${currentY + autoRotationAngle}deg)`;
+      
+      // Loop continuously on each screen hardware refresh frame
+      requestAnimationFrame(renderLiveModule);
+    }
+    
+    // Initialize animation loop engine
+    renderLiveModule();
+  </script>
+</body>
+</html>
