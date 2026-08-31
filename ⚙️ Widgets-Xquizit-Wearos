@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown Time Menu</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+.container{
+    position:relative;
+}
+
+.plus-btn{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:12px;
+    font-size:28px;
+    cursor:pointer;
+    padding:10px;
+}
+
+.dropdown{
+    display:none;
+    position:absolute;
+    top:60px;
+    left:0;
+    min-width:180px;
+    background:white;
+    border:2px solid #d0d0d0;
+    border-radius:12px;
+    padding:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.dropdown ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.dropdown li{
+    padding:10px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.dropdown li:hover{
+    background:#f0f0f0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <button class="plus-btn" onclick="toggleMenu()">+</button>
+
+    <div class="dropdown" id="menu">
+        <ul>
+            <li>⚡ Quick Task — ~5 min</li>
+            <li>📄 Review — ~15 min</li>
+            <li>🛠️ Build — ~30 min</li>
+            <li>🚀 Deploy — ~45 min</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display =
+        menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
