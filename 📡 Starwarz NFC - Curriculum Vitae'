@@ -1,0 +1,260 @@
+Seproductions x microsoft
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile friendly -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <marquee direction="up" height="800"><title>babu/name | Digital CV</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #D3AF37,;
+            line-height: 1.6;
+        }
+
+        .cv {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid #444;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #aaa;
+        }
+
+        .contact {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        section {
+            padding: 30px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .job {
+            margin-bottom: 25px;
+        }
+
+        .job h3 {
+            margin-bottom: 3px;
+        }
+
+        .date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill {
+            border: 1px solid #555;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #555;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .links a:hover {
+            background: #fff;
+            color: #111;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="cv">
+
+    <!-- HEADER -->
+    <header>
+        <h1>Your Name</h1>
+
+        <p>
+            Developer • Designer • Problem Solver
+        </p>
+
+        <div class="contact">
+            your@email.com · City, State
+        </div>
+    </header>
+
+
+    <!-- PROFILE -->
+    <section>
+        <h2>Profile</h2>
+
+        <p>
+            A short professional introduction describing who you are,
+            what you do, and the type of work you specialize in.
+        </p>
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section>
+        <h2>Experience</h2>
+
+        <div class="job">
+            <h3>Job / Position</h3>
+
+            <div class="date">
+                2024 — Present
+            </div>
+
+            <p>
+                Company Name
+            </p>
+
+            <ul>
+                <li>Achievement or responsibility.</li>
+                <li>Achievement or responsibility.</li>
+                <li>Achievement or responsibility.</li>
+            </ul>
+        </div>
+
+
+        <div class="job">
+            <h3>Previous Position</h3>
+
+            <div class="date">
+                2022 — 2024
+            </div>
+
+            <p>
+                Previous Company
+            </p>
+
+            <ul>
+                <li>Achievement or responsibility.</li>
+                <li>Achievement or responsibility.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section>
+        <h2>Skills</h2>
+
+        <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">Git</span>
+            <span class="skill">Linux</span>
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section>
+        <h2>Projects</h2>
+
+        <div class="job">
+            <h3>Project Name</h3>
+
+            <p>
+                Brief description of the project and what you built.
+            </p>
+        </div>
+
+        <div class="job">
+            <h3>Another Project</h3>
+
+            <p>
+                Brief description of another project or achievement.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- LINKS -->
+    <section>
+        <h2>Connect</h2>
+
+        <div class="links">
+
+            <a href="https://github.com/">
+                GitHub
+            </a>
+
+            <a hred="https://www.linkedin.com/in/muhammed-salahuddin-se">
+                LinkedIn
+            </a>
+
+            <a href="mailto:baw9la@gmail.com">
+                Email
+            </a>
+
+        </div>
+    </section>
+
+
+    <footer>
+        Digital CV · Updated 2024
+    </footer>
+
+</div>
+
+</body>
+</html>
+```
