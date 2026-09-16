@@ -78,17 +78,27 @@ Seproductions x microsoft
             margin-top: 10px;
         }
 
-        .skills {
+        .action-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .skill {
+        .action-button {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
             border: 1px solid #555;
-            padding: 6px 12px;
-            border-radius: 20px;
+            padding: 10px 16px;
+            border-radius: 6px;
             font-size: 0.85rem;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .action-button:hover,
+        .action-button:focus {
+            background: #fff;
+            color: #111;
         }
 
         .links {
@@ -190,17 +200,17 @@ Seproductions x microsoft
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- ACTION BUTTONS -->
     <section>
-        <h2>Skills</h2>
+        <h2>Skills &amp; Actions</h2>
 
-        <div class="skills">
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">TypeScript</span>
-            <span class="skill">Git</span>
-            <span class="skill">Linux</span>
+        <div class="action-buttons">
+            <a class="action-button" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a>
+            <a class="action-button" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a>
+            <a class="action-button" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a>
+            <a class="action-button" href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a>
+            <a class="action-button" href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">Git</a>
+            <a class="action-button" href="https://www.linux.org/" target="_blank" rel="noopener noreferrer">Linux</a>
         </div>
     </section>
 
@@ -257,4 +267,3 @@ Seproductions x microsoft
 
 </body>
 </html>
-```
