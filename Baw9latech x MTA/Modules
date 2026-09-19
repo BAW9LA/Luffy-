@@ -1,0 +1,6 @@
+def value=1,000,000
+println ("chuchu me muckers")
+if value >900,000
+then print("Welcome to the conglemerate")
+else println("Bring more to the table")
+done;
